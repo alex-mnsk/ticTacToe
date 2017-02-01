@@ -40,8 +40,8 @@ class TicTacToe {
     }
 
     noMoreTurns() {
-    	for (var i = 0; i < 2; i++) {
-    		for (var j = 0; j < 2; j++) {
+    	for (var i = 0; i <= 2; i++) {
+    		for (var j = 0; j <= 2; j++) {
     			if (this.field[i][j] == null) return false;
     		}
     	}
@@ -49,9 +49,9 @@ class TicTacToe {
     }
 
     isDraw() {
-        return this.noMoreTurns() && this.winner == null;
+        return this.getWinner() == null && this.noMoreTurns();
     }
-
+	
     getFieldValue(rowIndex, colIndex) {
     	return this.field[rowIndex][colIndex];
     }
